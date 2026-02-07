@@ -26,4 +26,25 @@
  */
 export function calculateGrade(score, hasExtraCredit) {
   // Your code here
+  var grade;
+  var marks = score;
+  if (marks < 0 || marks > 100 || typeof marks != "number") return "INVALID";
+
+  if (hasExtraCredit) {
+    marks = marks + 5;
+    if (marks > 100) {
+      marks = 100;
+    }
+  }
+  if (marks >= 0 && marks <= 59) {
+    return "F";
+  } else if (marks >= 60 && marks <= 69) {
+    return "D";
+  } else if (marks >= 70 && marks <= 79) {
+    return "C";
+  } else if (marks >= 80 && marks <= 89) {
+    return "B";
+  } else if (marks >= 90 && marks <= 100) {
+    return "A";
+  }
 }
